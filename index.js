@@ -7,15 +7,7 @@ const port = 3000;
 
 const server = http.createServer((req, res) => {
     if (req.url === '/') {
-        // Serve plain text for the root URL
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.end('Hello World!\n');
-    } else if (req.url === '/status') {
-        // Serve status response
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.end('Status: OK');
-    } else if (req.url === '/index.html') {
-        // Serve the index.html file if the request is for it
+        // Serve the index.html file for the root URL
         const filePath = path.join(__dirname, 'index.html');
         
         fs.readFile(filePath, (err, content) => {
@@ -29,6 +21,10 @@ const server = http.createServer((req, res) => {
                 res.end(content, 'utf-8');
             }
         });
+    } else if (req.url === '/status') {
+        // Serve status response
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.end('Status: OK');
     } else {
         // For any other URL, return a 404 Not Found
         res.writeHead(404, { 'Content-Type': 'text/plain' });

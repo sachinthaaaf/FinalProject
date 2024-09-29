@@ -5,13 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                // No other actions, just echo
+                // No need for any shell commands since you just want to echo
             }
         }
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // No other actions, just echo
+                // No need for any shell commands since you just want to echo
             }
         }
     }

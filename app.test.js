@@ -1,16 +1,29 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class MyAppTest {
-
+public class SeleniumTest {
+    
     @Test
-    public void testHelloWorld() {
-        String expected = "Hello, World!";
-        String actual = getHelloWorld();
-        assertEquals(expected, actual);
-    }
+    public void testGoogleSearch() {
+        // Set the path to your ChromeDriver (adjust path as per your system)
+        System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
 
-    public String getHelloWorld() {
-        return "Hello, World!";
+        // Create a new instance of ChromeDriver
+        WebDriver driver = new ChromeDriver();
+        
+        // Open Google
+        driver.get("https://www.google.com");
+
+        // Get the title of the page
+        String title = driver.getTitle();
+        
+        // Verify that the title is "Google"
+        assertEquals("Google", title);
+        
+        // Close the browser
+        driver.quit();
     }
 }

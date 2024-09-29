@@ -1,21 +1,17 @@
 pipeline {
-    // agent any
-    
-    // tools {
-    //     nodejs 'NodeJS' // Name as configured in Global Tool Configuration
-    // }
+    agent any
     
     stages {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                // bat 'npm install'
+                // No other actions, just echo
             }
         }
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // bat 'npm test'
+                // No other actions, just echo
             }
         }
     }

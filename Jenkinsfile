@@ -26,18 +26,27 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Running tests...'
-                // This will run the Jest tests
-                bat 'npm test'
+                script {
+                    echo 'Running JUnit tests...'
+                    // Run the tests using Maven or Gradle
+                    // Uncomment one of the following lines based on your project setup:
+                    bat 'mvn test'     // For Maven
+                    // bat 'gradle test'  // For Gradle
+                }
             }
         }
     }
 
     post {
         always {
-            // Collect and process the test results
-            junit '**/jest-test-results.xml'
-            archiveArtifacts artifacts: '**/jest-test-results.xml', allowEmptyArchive: true
+            // Collect and process the JUnit test results
+            // Use the correct path for Maven or Gradle test results
+            junit '**/target/surefire-reports/*.xml'  // For Maven
+            // junit '**/build/test-results/test/*.xml'  // For Gradle (uncomment this if using Gradle)
+            
+            // Optionally archive test results as artifacts
+            archiveArtifacts artifacts: '**/target/surefire-reports/*.xml', allowEmptyArchive: true  // For Maven
+            // archiveArtifacts artifacts: '**/build/test-results/test/*.xml', allowEmptyArchive: true  // For Gradle
         }
     }
 }

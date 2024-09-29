@@ -1,16 +1,14 @@
 {
   "name": "my-app",
   "version": "1.0.0",
-  "description": "A simple web application",
-  "main": "index.html",
+  "description": "A simple web application built with Node.js and Express",
+  "main": "index.js",
   "scripts": {
-    "start": "node index.js",  // Command to start your application
-    "test": "echo \"Error: no test specified\" && exit 1"  // Placeholder for tests
+    "start": "node index.js"
   },
-  "author": "Sachintha",
+  "author": "Your Name",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"  // Example dependency
+    "express": "^4.17.1"
   }
 }
-

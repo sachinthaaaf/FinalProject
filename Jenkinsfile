@@ -21,8 +21,9 @@ pipeline {
                     bat 'docker rm -f my-app-container || true'
                     bat 'docker run -d -p 3000:3000 --name my-app-container my-app:latest'
                     
-                    // Add a delay to ensure the container has time to start
-                    sleep 10
+                    // Increase sleep time to 20 seconds to ensure server has time to start
+                    echo 'Waiting for the server to start...'
+                    sleep 20
                 }
             }
         }

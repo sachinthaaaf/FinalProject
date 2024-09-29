@@ -9,10 +9,12 @@ public class WebAppRootTest {
 
     @Test
     public void testRootEndpoint() throws Exception {
+        // Connect to the root endpoint
         URL url = new URL("http://localhost:3000/");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
 
+        // Read the response
         BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
         String inputLine;
         StringBuilder content = new StringBuilder();
@@ -23,6 +25,8 @@ public class WebAppRootTest {
         in.close();
         conn.disconnect();
 
-        assertTrue(content.toString().contains("Hello World!"));
+        // Check if the response contains the expected content
+        String expectedContent = "Empowering Minds, Illuminating Futures"; 
+        assertTrue(content.toString().contains(expectedContent));
     }
 }

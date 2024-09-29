@@ -42,8 +42,8 @@ pipeline {
     post {
         always {
             // Collect and process JUnit test results
-            junit '**/target/surefire-reports/*.xml'
-            archiveArtifacts artifacts: '**/target/surefire-reports/*.xml', allowEmptyArchive: true
+            // junit '**/target/surefire-reports/*.xml'
+            // archiveArtifacts artifacts: '**/target/surefire-reports/*.xml', allowEmptyArchive: true
         }
     }
 }

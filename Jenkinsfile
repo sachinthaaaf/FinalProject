@@ -22,5 +22,17 @@ pipeline {
                 }
             }
         }
+         stage('Test') {
+            steps {
+                echo 'Running tests...'
+                // This will run the Jest tests
+                bat 'npm test'
+            }
+    }
+        post {
+        always {
+            junit '**/jest-test-results.xml'
+            archiveArtifacts artifacts: '**/jest-test-results.xml', allowEmptyArchive: true
+        }
     }
 }

@@ -7,7 +7,7 @@ pipeline {
                 script {
                     echo 'Building Docker Image...'
                     // Build the Docker image
-                    def image = docker.build("my-app:latest")
+                    bat 'docker build -t my-app:latest .'
                 }
             }
         }
@@ -16,11 +16,9 @@ pipeline {
                 script {
                     echo 'Deploying Docker Container...'
                     
-                    // Stop and remove any existing container running on port 80
-                    sh 'docker rm -f my-app-container || true'
-                    
-                    // Run the new container from the built image
-                    sh 'docker run -d -p 80:80 --name my-app-container my-app:latest'
+                    // Stop any existing container and run the new one
+                    bat 'docker rm -f my-app-container || true'
+                    bat 'docker run -d -p 80:80 --name my-app-container my-app:latest'
                 }
             }
         }

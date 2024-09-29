@@ -5,11 +5,11 @@ import java.net.URL;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class WebAppRootTest {
+public class WebAppStatusTest {
 
     @Test
-    public void testRootEndpoint() throws Exception {
-        URL url = new URL("http://localhost:3000/");
+    public void testStatusEndpoint() throws Exception {
+        URL url = new URL("http://localhost:3000/status");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
 
@@ -23,6 +23,6 @@ public class WebAppRootTest {
         in.close();
         conn.disconnect();
 
-        assertTrue(content.toString().contains("Hello World!"));
+        assertTrue(content.toString().contains("Status: OK"));
     }
 }

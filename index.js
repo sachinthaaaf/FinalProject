@@ -5,10 +5,18 @@ const path = require('path');
 // Define the port your server will listen on
 const port = 3000;
 
-// Create an HTTP server
+
 const server = http.createServer((req, res) => {
-  // Set the file path to the index.html file
-  const filePath = path.join(__dirname, 'index.html');
+    if (req.url === '/') {
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.end('Hello World!\n');
+    } else if (req.url === '/status') {
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.end('Status: OK');
+    } else {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('404 Not Found');
+    }
 
   // Read the index.html file
   fs.readFile(filePath, (err, content) => {

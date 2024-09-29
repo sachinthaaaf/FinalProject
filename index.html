@@ -1,0 +1,531 @@
+<!-- Sachintha Fernando 
+     BSCP|CS|62|113 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Wisdom Academy </title>
+    <link rel="icon" href="./assets/img/logo.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.fontawesome.com/6.0.0-beta3/css/all.min.css">
+
+    <!-- Include Vue.js from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <div id="menu" class="fas fa-bars"></div>
+        <img src="./assets/img/logo.png">
+
+        <a href="./assets/img/logo.png" class="logo"></i> Wisdom Academy </a>
+
+        <!-- Navbar  -->
+        <nav class="navbar">
+            <div class="mobile-navbar" id="myTopnav">
+                <div class="menu-icon" id="menuIcon">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <ul>
+                    <li><a class="active" href="#home">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="./courses.html" class="dropbtn">Courses <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="./courses-1.html">Software Development</a>
+                            <a href="./courses-2.html">Business Analytics</a>
+                            <a href="./courses-3.html">Nursing</a>
+                        </div>
+                    </li>
+                    <li><a href="./trainer.html">Trainers</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <div class="buttons">
+                        <a href="./login.html" class="button">Sign In</a>
+                        <a href="./signup.html" class="button">Register</a>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="home" id="home">
+        <h1>Empowering Minds, <br>Illuminating Futures</h1>
+        <p> "Cultivating Knowledge, Nurturing Dreams, and Shaping Futures"
+        </p>
+
+        <a href="./signup.html"><button class="btn">Join with us</button></a>
+
+        <div class="shape"></div>
+
+    </section>
+
+    <!-- About IWsdom Academy  -->
+    <section class="about-container" id="about-section">
+
+        <div class="about-content">
+            <h3><b>About Wisdom Academy</b></h3>
+            <p>
+                At Wisdom Academy, we believe that knowledge is the key to unlocking the boundless
+                potential within each individual. We are dedicated to nurturing minds, inspiring
+                creativity, and illuminating futures. Our mission is to provide a transformative
+                educational experience that empowers our students to reach new heights of achievement.
+            </p>
+
+            <p><b>What Sets Us Apart:</b>
+            <ul>
+                <li><i class="fas fa-check"></i> Personalized Learning: We understand that every
+                    student is unique. That's why we offer personalized learning paths, adaptive content, and expert
+                    guidance to help you succeed.</li>
+                <li><i class="fas fa-check"></i> Engaging Community: Join a vibrant community of learners,
+                    where you can connect with instructors, collaborate with peers, and share your knowledge
+                    and experiences.</li>
+                <li><i class="fas fa-check"></i> Innovative Approach: We embrace innovation in
+                    education, offering cutting-edge resources, interactive learning tools, and a dynamic
+                    online environment that keeps you engaged and inspired.</li>
+            </ul>
+
+            </p>
+
+            <p><a href="./about.html"><button class="btn">learn more</button></a></p>
+
+        </div>
+        <div class="about-image">
+            <img src="./assets/img/about.jpg" alt="Wisdom Academy Image">
+        </div>
+
+    </section>
+
+    <!-- Counting Students and many more  -->
+    <section class="counter" id="counter">
+        <div class="container">
+            <i class="fas fa-user-graduate"></i>
+            <span class="num" data-val="1050">000</span>
+            <span class="text">Students</span>
+        </div>
+
+        <div class="container">
+            <i class="fas fa-chalkboard-teacher course-icon"></i>
+            <span class="num" data-val="120">000</span>
+            <span class="text">Courses</span>
+        </div>
+
+        <div class="container">
+            <i class="fas fa-graduation-cap"></i>
+            <span class="num" data-val="70">000</span>
+            <span class="text">Trainers</span>
+        </div>
+
+        <div class="container">
+            <i class="far fa-calendar-alt"></i>
+            <span class="num" data-val="420">000</span>
+            <span class="text">Events</span>
+        </div>
+    </section>
+
+    <!-- Courses Section for Courses  -->
+    <section class="course" id="course">
+
+        <h1 class="heading">Our Popular Courses</h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="./assets/img/courses/course-1.jpg" alt="">
+                <h3 class="price">$80</h3>
+                <div class="content">
+                    <a href="./courses-1.html" class="title">Software Development</a>
+                    <div class="info">
+                        <h3> <i class="far fa-clock"></i> 6 hours </h3>
+                        <h3> <i class="far fa-calendar-alt"></i> 3 year </h3>
+                        <h3> <i class="fas fa-book"></i> 32 modules </h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="./assets/img/courses/course-2.jpg " alt="">
+                <h3 class="price">$150</h3>
+                <div class="content">
+                    <div class="stars">
+                    </div>
+                    <a href="./courses-2.html" class="title">Business Analytics</a>
+                    <div class="info">
+                        <h3> <i class="far fa-clock"></i> 4 hours </h3>
+                        <h3> <i class="far fa-calendar-alt"></i> 2 year </h3>
+                        <h3> <i class="fas fa-book"></i> 24 modules </h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="./assets/img/courses/course-3.jpg " alt="">
+                <h3 class="price">$120</h3>
+                <div class="content">
+                    <div class="stars">
+                    </div>
+                    <a href="./courses-3.html" class="title">Nursing</a>
+                    <div class="info">
+                        <h3> <i class="far fa-clock"></i> 2 hours </h3>
+                        <h3> <i class="far fa-calendar-alt"></i> 1 year </h3>
+                        <h3> <i class="fas fa-book"></i> 12 modules </h3>
+                    </div>
+                </div>
+            </div>
+
+            <a href="./courses.html"><button class="btn">learn more</button></a>
+        </div>
+    </section>
+
+    <!-- Trainer Section which contain Trainers  -->
+    <section class="trainer" id="trainer">
+
+        <h1 class="heading">Our Expert Trainers</h1>
+
+        <div class="box-container scroll-fade-in">
+
+            <div class="box">
+                <img src="./assets/img/Trainer-1.jpg " alt="">
+                <div class="content">
+                    <div class="stars">
+                    </div>
+                    <a href="#" class="title">Michael Turner
+                        <i>IT</i>
+                    </a>
+                    <div class="info">
+                        <p>
+                            Meet Michael Turner, our web development guru. He's here to demystify web
+                            coding and inspire your digital creativity.Michael brings a wealth of experience
+                            making web development accessible to all.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="./assets/img/Trainer-2.jpg  " alt="">
+                <div class="content">
+                    <div class="stars">
+                    </div>
+                    <a href="#" class="title">Emily Johnson
+                        <i>Business</i>
+                    </a>
+                    <div class="info">
+                        <p>
+                            Meet Emily Johnson, our marketing maven. With a deep understanding of
+                            marketing strategies and consumer behavior, Emily is your guide to unlocking
+                            he world of marketing excellence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="./assets/img/Trainer-3.jpg  " alt="">
+                <div class="content">
+                    <div class="stars">
+                    </div>
+                    <a href="#" class="title">Professor David Anderson
+                        <i>Medicine</i>
+                    </a>
+
+                    <div class="info">
+                        <p>
+                            Meet Professor David Anderson, our medical maestro.
+                            With extensive expertise in the field of medicine, Professor Anderson is
+                            your trusted source for exploring the intricacies of healthcare and medical
+                            advancements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="./trainer.html"><button class="btn">learn more</button></a>
+        </div>
+    </section>
+
+    <!-- Global Locations of the Campus  -->
+    <section class="campus">
+        <div class="heading">
+            <h1>Our Global Locations</h1>
+        </div>
+
+        <div class="row">
+            <div class="campus-col">
+                <img src="assets/img/Colombo.jpg" alt="">
+                <div class="layer">
+                    <h3>COLOMBO</h3>
+                </div>
+            </div>
+
+            <div class="campus-col">
+                <img src="assets/img/Sydney.jpg" alt="">
+                <div class="layer">
+                    <h3>SYDNEY</h3>
+                </div>
+            </div>
+
+            <div class="campus-col">
+                <img src="assets/img/London.jpg" alt="">
+                <div class="layer">
+                    <h3>LONDON</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities That the academy provides  -->
+    <section class="facilities ">
+        <h1>Our Facilities</h1>
+        <div class="row ">
+            <div class="facilities-col ">
+                <img src="assets/img/Library.jpg">
+                <h3>The Campus Library</h3>
+                <p>Our campus library is a serene haven for academics and book lovers. Dive
+                    into a world of knowledge and exploration right at your fingertips.</p>
+            </div>
+
+            <div class="facilities-col">
+                <img src="assets/img/Sports.jpg">
+                <h3>Campus Sports Facilities</h3>
+                <p>Get your heart racing and stay in shape with our outstanding sports facilities. Challenge yourself,
+                    engage in team sports, and foster a healthy lifestyle among fellow
+                    students.</p>
+            </div>
+
+            <div class="facilities-col">
+                <img src="assets/img/Canteen.jpg">
+                <h3>The Campus Canteen</h3>
+                <p>The campus canteen is where you can satisfy your cravings with a delightful assortment of food.
+                    It's not just about food; it's a place for students to socialize, unwind, and form
+                    connections while enjoying good company and great flavors.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Testimonials by other students  -->
+    <section class="testimonials ">
+        <div class="heading">
+            <h1>Testimonials</h1>
+
+        </div>
+
+        <div class="testimonials-container scroll-fade-in">
+            <!-- Testimonial 1 -->
+            <div class="testimonials-col" v-for="(testimonial, index) in testimonials"
+                v-show="index === currentTestimonialIndex">
+                <img src="assets/img/testimonials-2.jpg">
+
+                <div>
+                    <p>"Choosing this university was one of the best decisions I've ever made. The top-notch
+                        faculty,
+                        cutting-edge facilities, and a diverse student community have given me a world-class
+                        education.
+                        The
+                        support I've received here has not only prepared me for a successful career in computer
+                        science
+                        but
+                        also
+                        helped me develop as an individual. I couldn't be happier with my university experience."
+                    </p>
+                    <h3>John Doe, Computer Science Major</h3>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonials-col">
+                <img src="assets/img/testimonials-1.jpg">
+
+                <div>
+                    <p>"I can't express how grateful I am for the education I received at this university. The
+                        professors
+                        genuinely care about your success and provide valuable insights. My time here prepared me
+                        for
+                        the
+                        dynamic world of business, and the strong alumni network has already opened doors for me.
+                        It's
+                        not
+                        just an institution; it's a launchpad for your future."</p>
+                    <h3>Sarah Smith, Business Graduate</h3>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3  -->
+            <div class="testimonials-col">
+                <img src="assets/img/Trainer-3.jpg">
+                <div>
+                    <p>"Being a part of this university's fine arts program has been a transformative journey. The
+                        creative
+                        environment, mentorship from talented artists, and the exposure to various art forms have
+                        expanded
+                        my horizons. I've not only honed my artistic skills but also grown personally. The
+                        university
+                        encourages you to follow your passion and turn it into a meaningful career."</p>
+                    <h3>Emily Davis, Fine Arts Enthusiast</h3>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="testimonials-col">
+                <img src="assets/img/Trainer-1.jpg">
+                <div>
+                    <p>Wisdom Academy has provided me with an exceptional learning experience. The science program
+                        here
+                        is top-notch,
+                        with dedicated professors and state-of-the-art facilities. The emphasis on critical thinking
+                        and
+                        problem-solving
+                        has prepared me for a successful career in the field of science. I am proud to be a part of
+                        Wisdom Academy."</p>
+                    <h3>Michael Smith, Science Major</h3>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="navigation">
+            <div class="dot-container">
+                <div class="dot" onclick="scrollTestimonials(0)"></div>
+                <div class="dot" onclick="scrollTestimonials(1)"></div>
+                <div class="dot" onclick="scrollTestimonials(2)"></div>
+                <div class="dot" onclick="scrollTestimonials(3)"></div>
+            </div>
+        </div>
+
+    </section>
+
+    </div>
+
+    <!-- Scroll Button  -->
+    <button id="scrollUpButton" class="hidden" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+    <!-- Chat Window -->
+    <div id="chatIcon" class="chat-icon hidden" onclick="toggleChatBox()">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <div id="chatBox" class="hidden">
+        <div id="chatHeader">
+            <span>Live Chat</span>
+            <button id="closeChat" onclick="toggleChatBox()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="chatMessages">
+            <div class="chat-message received">Hello, how can I help you?</div>
+        </div>
+        <div class="send">
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <button id="sendMessage" onclick="sendMessage()">Send</button>
+
+        </div>
+    </div>
+
+
+    <!-- Footer Section  -->
+    <footer>
+        <div class="frow">
+            <div class="fcol">
+                <img src="./assets/img/logo.png" class="logo">
+                <p>"Unlock your potential with Wisdom Academy - where knowledge meets inspiration."</p>
+            </div>
+            <div class="fcol">
+                <h3>Head-Office<div class="underline"><span></span></div>
+                </h3>
+                <p>152A , Galle Road</p>
+                <p>Colombo 3</p>
+                <p>Sri Lanka</p>
+                <p class="email-id"><i class="far fa-envelope"></i> wisdomacademy@gmail.com</p>
+                <h4><i class="fas fa-phone-alt"></i> +94 11 4512 120</h4>
+                <h4><i class="fas fa-phone-alt"></i> +94 11 4545 190</h4>
+            </div>
+            <div class="fcol">
+                <h3>Links<div class="underline"><span></span></h3>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./courses.html">Courses</a></li>
+                    <li><a href="./trainer.html">Trainers</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+
+                </ul>
+            </div>
+            <div class="fcol">
+                <h3>Newsletter<div class="underline"><span></span></h3>
+                <form>
+                    <i class="far fa-envelope"></i>
+                    <input type="email" placeholder="Enter your email ID" required>
+                    <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                </form>
+
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-whatsapp"></i>
+                    <i class="fab fa-pinterest"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Sachintha Fernando &copy; 2023 - All Rights Reserved</p>
+    </footer>
+
+
+
+    <script src="./main.js"></script>
+    <script src="./new.js"></script>
+    <script src="./new1.js"></script>
+    <script src="app.js"></script>
+    <script src="./testimonial.js"></script>
+
+</body>
+
+</html>

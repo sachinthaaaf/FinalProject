@@ -5,10 +5,10 @@ import java.net.URL;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class WebAppRootTest {
+public class WebAppContentTest {
 
     @Test
-    public void testRootEndpoint() throws Exception {
+    public void testRootPageContent() throws Exception {
         // Connect to the root endpoint
         URL url = new URL("http://localhost:3000/");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -21,12 +21,11 @@ public class WebAppRootTest {
         while ((inputLine = in.readLine()) != null) {
             content.append(inputLine);
         }
-
         in.close();
         conn.disconnect();
 
-        // Check if the response contains the expected content
-        String expectedContent = "Empowering Minds, Illuminating Futures"; 
+        // Check if the response contains specific content (adjust this based on your index.html)
+        String expectedContent = "<h3><b>About Wisdom Academy</b></h3>"; // Adjust to match content in your index.html
         assertTrue(content.toString().contains(expectedContent));
     }
 }

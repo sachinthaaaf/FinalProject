@@ -1,10 +1,11 @@
-# Use an official Node.js image as a base
+# Use an official Node.js runtime as the base image
 FROM node:14-alpine
 
-# Set the working directory in the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the package.json and package-lock.json
+# Copy package.json and package-lock.json first
+# This helps in caching the npm install step if dependencies haven't changed
 COPY package*.json ./
 
 # Install dependencies
@@ -13,8 +14,8 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Expose the application's port
+# Expose the port the app runs on
 EXPOSE 3000
 
-# Start the application
+# Command to start the application
 CMD ["npm", "start"]

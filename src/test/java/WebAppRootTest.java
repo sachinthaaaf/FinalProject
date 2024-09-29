@@ -9,12 +9,10 @@ public class WebAppRootTest {
 
     @Test
     public void testRootEndpoint() throws Exception {
-        // Assume the application is running on localhost:3000
         URL url = new URL("http://localhost:3000/");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
 
-        // Get the response
         BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
         String inputLine;
         StringBuilder content = new StringBuilder();
@@ -22,11 +20,9 @@ public class WebAppRootTest {
             content.append(inputLine);
         }
 
-        // Close connections
         in.close();
         conn.disconnect();
 
-        // Assert the response contains "Hello World!"
         assertTrue(content.toString().contains("Hello World!"));
     }
 }

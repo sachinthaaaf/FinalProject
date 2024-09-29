@@ -3,10 +3,13 @@ pipeline {
     
     stages {
         stage('Build') {
-            steps {
-                echo 'Building the project...'
-                // No need for any shell commands since you just want to echo
-            }
+             steps {
+                script {
+                    echo 'Building Docker Image...'
+                    // Build the Docker image
+                    def image = docker.build("my-app:latest")
+                }
+             }
         }
         stage('Test') {
             steps {

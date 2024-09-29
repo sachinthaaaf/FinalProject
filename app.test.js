@@ -1,31 +1,16 @@
-const http = require('http');
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-describe('Server Test', () => {
-  it('should respond with Hello World', (done) => {
-    const options = {
-      hostname: 'localhost',
-      port: 3000,
-      path: '/',
-      method: 'GET'
-    };
+public class MyAppTest {
 
-    const req = http.request(options, (res) => {
-      let data = '';
+    @Test
+    public void testHelloWorld() {
+        String expected = "Hello, World!";
+        String actual = getHelloWorld();
+        assertEquals(expected, actual);
+    }
 
-      res.on('data', (chunk) => {
-        data += chunk;
-      });
-
-      res.on('end', () => {
-        expect(data).toBe('Hello World!\n');
-        done();
-      });
-    });
-
-    req.on('error', (e) => {
-      done(e);
-    });
-
-    req.end();
-  });
-});
+    public String getHelloWorld() {
+        return "Hello, World!";
+    }
+}

@@ -1,19 +1,19 @@
-# Use an official Node.js runtime as a base image
+# Use an official Node.js runtime as the base image
 FROM node:14-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy the package.json and package-lock.json to the working directory
 COPY package*.json ./
 
 # Install the app dependencies
-RUN npm cache clean --force && npm install
+RUN npm install
 
-# Copy the rest of the application code
+# Copy the rest of the application files
 COPY . .
 
-# Expose the port the app will run on
+# Expose the port your app will run on
 EXPOSE 3000
 
 # Start the application

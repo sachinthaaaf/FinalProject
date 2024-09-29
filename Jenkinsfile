@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven'  // Use the Maven version configured in Jenkins
-    }
-
     stages {
         stage('Build') {
             steps {
@@ -20,6 +16,8 @@ pipeline {
             steps {
                 script {
                     echo 'Deploying Docker Container...'
+                    
+                    // Stop any existing container and run the new one
                     bat 'docker rm -f my-app-container || true'
                     bat 'docker run -d -p 3000:3000 --name my-app-container my-app:latest'
                 }
@@ -28,15 +26,20 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Running JUnit tests...'
-                bat 'mvn test'
+                script {
+                    echo 'Running JUnit tests...'
+                    // Run Maven tests (JUnit will be executed as part of the `mvn test` phase)
+                    bat 'mvn test'
+                }
             }
         }
     }
 
     post {
         always {
-            junit '**/target/surefire-reports/*.xml'
+            // Collect and process JUnit test results
+            junit '**/target/surefire-reports/*.xml'  // This is the default directory for Maven test reports
+            archiveArtifacts artifacts: '**/target/surefire-reports/*.xml', allowEmptyArchive: true
         }
     }
 }

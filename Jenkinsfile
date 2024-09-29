@@ -11,6 +11,7 @@ pipeline {
                 }
             }
         }
+        
         stage('Deploy') {
             steps {
                 script {
@@ -22,18 +23,21 @@ pipeline {
                 }
             }
         }
-         stage('Test') {
+
+        stage('Test') {
             steps {
                 echo 'Running tests...'
                 // This will run the Jest tests
                 bat 'npm test'
             }
+        }
     }
-        post {
+
+    post {
         always {
+            // Collect and process the test results
             junit '**/jest-test-results.xml'
             archiveArtifacts artifacts: '**/jest-test-results.xml', allowEmptyArchive: true
         }
     }
-}
 }

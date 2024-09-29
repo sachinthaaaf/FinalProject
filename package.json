@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "1.0.0",
-  "description": "A simple Node.js web application",
+  "description": "A simple Node.js app",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"

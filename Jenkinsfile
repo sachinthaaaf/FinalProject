@@ -1,11 +1,16 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven-3.8.4'  // Use the Maven version configured in Jenkins
+    }
+
     stages {
         stage('Build') {
             steps {
                 script {
                     echo 'Building Docker Image...'
+                    // Build the Docker image
                     bat 'docker build -t my-app:latest .'
                 }
             }
@@ -23,8 +28,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Running Selenium tests...'
-                // Run Selenium tests using Maven
+                echo 'Running JUnit tests...'
                 bat 'mvn test'
             }
         }
@@ -32,8 +36,8 @@ pipeline {
 
     post {
         always {
-            // Publish the JUnit test results (for Selenium tests in Maven)
-            junit '**/target/surefire-reports/*.xml'
+            junit '**/target/surefire-reports/*.xml'  // For Maven test reports
+            archiveArtifacts artifacts: '**/target/surefire-reports/*.xml', allowEmptyArchive: true
         }
     }
 }

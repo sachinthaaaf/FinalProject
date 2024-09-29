@@ -1,9 +1,9 @@
 pipeline {
-    agent any
+    // agent any
     
-    tools {
-        nodejs 'NodeJS' // Name as configured in Global Tool Configuration
-    }
+    // tools {
+    //     nodejs 'NodeJS' // Name as configured in Global Tool Configuration
+    // }
     
     stages {
         stage('Build') {

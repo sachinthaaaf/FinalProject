@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    image: my-app:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEW_RELIC_LICENSE_KEY=your_new_relic_license_key
+      - NEW_RELIC_APP_NAME=my-app

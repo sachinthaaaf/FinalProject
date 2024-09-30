@@ -6,5 +6,5 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-      - NEW_RELIC_LICENSE_KEY=your_new_relic_license_key
+      - NEW_RELIC_LICENSE_KEY=NRAK-E7FL6J1V0AVC3T3OBSBIZHDIBSV
       - NEW_RELIC_APP_NAME=my-app

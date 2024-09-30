@@ -31,7 +31,7 @@ pipeline {
             }
         }
 
-         stage('Deploy') {
+         stage('Test Environment') {
             steps {
                 script {
                     echo 'Deploying with Docker Compose...'

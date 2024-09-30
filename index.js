@@ -9,7 +9,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
     if (req.url === '/') {
         // Serve the index.html file for the root URL
-        const filePath = path.join(__dirname, '/wisdom-academy');
+        const filePath = path.join(__dirname, '/wisdom-academy/');
         
         fs.readFile(filePath, (err, content) => {
             if (err) {

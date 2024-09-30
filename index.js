@@ -54,25 +54,32 @@ const server = http.createServer((req, res) => {
             break;
     }
 
-    // Read the requested file from the file system
-    fs.readFile(filePath, (err, content) => {
-        if (err) {
-            // Handle errors (like file not found)
-            if (err.code === 'ENOENT') {
-                // If file not found, return a 404
-                res.writeHead(404, { 'Content-Type': 'text/plain' });
-                res.end('404 - Not Found');
+    // Handle the /status endpoint
+    if (req.url === '/status') {
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.end('Status: OK');
+    } 
+    // Read the requested file from the file system for other requests
+    else {
+        fs.readFile(filePath, (err, content) => {
+            if (err) {
+                // Handle errors (like file not found)
+                if (err.code === 'ENOENT') {
+                    // If file not found, return a 404
+                    res.writeHead(404, { 'Content-Type': 'text/plain' });
+                    res.end('404 - Not Found');
+                } else {
+                    // Return a 500 Internal Server Error for other errors
+                    res.writeHead(500, { 'Content-Type': 'text/plain' });
+                    res.end('500 - Internal Server Error');
+                }
             } else {
-                // Return a 500 Internal Server Error for other errors
-                res.writeHead(500, { 'Content-Type': 'text/plain' });
-                res.end('500 - Internal Server Error');
+                // Serve the requested file with the appropriate content type
+                res.writeHead(200, { 'Content-Type': contentType });
+                res.end(content, 'utf-8');
             }
-        } else {
-            // Serve the requested file with the appropriate content type
-            res.writeHead(200, { 'Content-Type': contentType });
-            res.end(content, 'utf-8');
-        }
-    });
+        });
+    }
 });
 
 // Start the server and listen on the defined port

@@ -1,0 +1,4 @@
+scrape_configs:
+  - job_name: 'my-web-app'
+    static_configs:
+      - targets: ['localhost:3000'] # Change to your app's IP and port

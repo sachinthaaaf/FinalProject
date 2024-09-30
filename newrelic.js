@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 exports.config = {
-  app_name: ['My Web App'],
-  license_key: 'NRAK-92XBYI4FM8XN4ZJMN9H2UU83JHD',
+  app_name: ['My App'],
+  license_key: 'NRAK-E7FL6J1V0AVC3T3OBSBIZHDIBSV',
   logging: {
     level: 'info'
   }
-}
+};

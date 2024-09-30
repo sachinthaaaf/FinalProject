@@ -1,0 +1,376 @@
+<!-- Sachintha Fernando 
+     BSCP|CS|62|113 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Wisdom Academy </title>
+    <link rel="icon" href="./assets/img/logo.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.fontawesome.com/6.0.0-beta3/css/all.min.css">
+
+    <!-- Include Vue.js from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="./css/trainer.css">
+
+</head>
+
+<body>
+    <header>
+        <div id="menu" class="fas fa-bars"></div>
+        <img src="./assets/img/logo.png">
+
+        <a href="./assets/img/logo.png" class="logo"></i> Wisdom Academy </a>
+
+        <nav class="navbar">
+            <div class="mobile-navbar" id="myTopnav">
+                <div class="menu-icon" id="menuIcon">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="./courses.html" class="dropbtn">Courses <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="./courses-1.html">Software Development</a>
+                            <a href="./courses-2.html">Business Analytics</a>
+                            <a href="./courses-3.html">Nursing</a>
+                        </div>
+                    </li>
+                    <li><a class="active" href="./trainer.html">Trainers</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <div class="buttons">
+                        <a href="./login.html" class="button">Sign In</a>
+                        <a href="./signup.html" class="button">Register</a>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- <section class="home" id="home">
+        <h1>Empowering Minds, <br>Illuminating Futures</h1>
+        <p> "Cultivating Knowledge, Nurturing Dreams, and Shaping Futures"
+        </p>
+
+        <a href="./signup.html"><button class="btn">Join with us</button></a>
+
+        <div class="shape"></div>
+
+    </section> -->
+    <!-- Video Section  -->
+    <section class="ctrainer" id="ctrainer">
+        <div class="video-container">
+            <div class="video-background">
+                <video autoplay muted loop class="video">
+                    <source src="./assets/vid/Trainer.MOV" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+        </div>
+
+        <h1>Meet Our Trainers</h1>
+        <p>Our team of accomplished professionals are more than educators; they are mentors, guides, and industry
+            leaders who are passionate about sharing their knowledge and empowering our students.</p>
+        <p>Discover their expertise and courses to start your educational journey at Wisdom Academy today.</p>
+
+        <a href="./signup.html"><button class="btn">Join with us</button></a>
+    </section>
+
+    <!-- Trainer Descriptions in Depth  -->
+    <section class="trainer" id="trainer">
+
+        <h1 class="heading">Meet Our Expert Trainers</h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="./assets/img/Trainer-1.jpg " alt="">
+                <div class="content">
+                    <a href="#" class="title">Michael Turner
+                        <i>IT</i>
+                    </a>
+                    <div class="info">
+                        <p>
+                            Meet Michael Turner, our web development guru. He's here to demystify web
+                            coding and inspire your digital creativity.Michael brings a wealth of experience
+                            making web development accessible to all.
+                        </p>
+
+                    </div>
+                    <div class="icon">
+                        <a href="https://twitter.com/">
+                            <h3 class="fab fa-twitter"> </h3>
+                        </a>
+                        <a href="https://www.facebook.com/">
+                            <h3 class="fab fa-facebook"> </h3>
+                        </a>
+                        <a href="https://www.linkedin.com/">
+                            <h3 class="fab fa-linkedin"> </h3>
+                        </a>
+                        <a href="https://www.instagram.com/">
+                            <h3 class="fab fa-instagram"> </h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="./assets/img/Trainer-2.jpg  " alt="">
+                <div class="content">
+                    <div class="stars">
+                    </div>
+                    <a href="#" class="title">Emily Johnson
+                        <i>Business</i>
+                    </a>
+                    <div class="info">
+                        <p>
+                            Meet Emily Johnson, our marketing maven. With a deep understanding of
+                            marketing strategies and consumer behavior, Emily is your guide to unlocking
+                            he world of marketing excellence.
+                        </p>
+                    </div>
+                    <div class="icon">
+                        <a href="https://twitter.com/">
+                            <h3 class="fab fa-twitter"> </h3>
+                        </a>
+                        <a href="https://www.facebook.com/">
+                            <h3 class="fab fa-facebook"> </h3>
+                        </a>
+                        <a href="https://www.linkedin.com/">
+                            <h3 class="fab fa-linkedin"> </h3>
+                        </a>
+                        <a href="https://www.instagram.com/">
+                            <h3 class="fab fa-instagram"> </h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="./assets/img/Trainer-3.jpg  " alt="">
+                <div class="content">
+                    <div class="stars">
+                    </div>
+                    <a href="#" class="title">Professor David Anderson
+                        <i>Medicine</i>
+                    </a>
+
+                    <div class="info">
+                        <p>
+                            Meet Professor David Anderson, our medical maestro.
+                            With extensive expertise in the field of medicine, Professor Anderson is
+                            your trusted source for exploring the intricacies of healthcare and medical
+                            advancements.
+                        </p>
+                    </div>
+                    <div class="icon">
+                        <a href="https://twitter.com/">
+                            <h3 class="fab fa-twitter"> </h3>
+                        </a>
+                        <a href="https://www.facebook.com/">
+                            <h3 class="fab fa-facebook"> </h3>
+                        </a>
+                        <a href="https://www.linkedin.com/">
+                            <h3 class="fab fa-linkedin"> </h3>
+                        </a>
+                        <a href="https://www.instagram.com/">
+                            <h3 class="fab fa-instagram"> </h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="./assets/img/Trainer-4.jpg" alt="">
+                <div class="content">
+                    <a href="#" class="title">Sarah Mitchell
+                        <i>Law Studies</i>
+                    </a>
+                    <div class="info">
+                        <p>
+                            Meet Sarah Mitchell, our legal expert. With a strong background in law and legal studies,
+                            Sarah
+                            is here to guide you through the intricate world of legal systems, legislation, and
+                            advocacy.
+                        </p>
+                    </div>
+                    <div class="icon">
+                        <a href="https://twitter.com/">
+                            <h3 class="fab fa-twitter"> </h3>
+                        </a>
+                        <a href="https://www.facebook.com/">
+                            <h3 class="fab fa-facebook"> </h3>
+                        </a>
+                        <a href="https://www.linkedin.com/">
+                            <h3 class="fab fa-linkedin"> </h3>
+                        </a>
+                        <a href="https://www.instagram.com/">
+                            <h3 class="fab fa-instagram"> </h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="./assets/img/Trainer-5.jpg" alt="">
+                <div class="content">
+                    <a href="#" class="title">Olivia Rodriguez
+                        <i>Art History Studies</i>
+                    </a>
+                    <div class="info">
+                        <p>
+                            Meet Olivia Rodriguez, our art history enthusiast. With a profound passion for the art
+                            world,
+                            Olivia will take you on a journey through the history of art,
+                            artists, and their impact on culture and society.
+                        </p>
+                    </div>
+                    <div class="icon">
+                        <a href="https://twitter.com/">
+                            <h3 class="fab fa-twitter"> </h3>
+                        </a>
+                        <a href="https://www.facebook.com/">
+                            <h3 class="fab fa-facebook"> </h3>
+                        </a>
+                        <a href="https://www.linkedin.com/">
+                            <h3 class="fab fa-linkedin"> </h3>
+                        </a>
+                        <a href="https://www.instagram.com/">
+                            <h3 class="fab fa-instagram"> </h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="./assets/img/Trainer-6.jpg" alt="">
+                <div class="content">
+                    <a href="#" class="title">John Baker
+                        <i>Environmental Studies</i>
+                    </a>
+                    <div class="info">
+                        <p>
+                            Meet John Baker, our environmental advocate. Committed to sustainability, John guides you in
+                            understanding and preserving our planet, exploring eco-friendly practices and conservation.
+                        </p>
+                    </div>
+                    <div class="icon">
+                        <a href="https://twitter.com/">
+                            <h3 class="fab fa-twitter"> </h3>
+                        </a>
+                        <a href="https://www.facebook.com/">
+                            <h3 class="fab fa-facebook"> </h3>
+                        </a>
+                        <a href="https://www.linkedin.com/">
+                            <h3 class="fab fa-linkedin"> </h3>
+                        </a>
+                        <a href="https://www.instagram.com/">
+                            <h3 class="fab fa-instagram"> </h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll Button  -->
+    <button id="scrollUpButton" class="hidden" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+    <!-- Chat Window -->
+    <div id="chatIcon" class="chat-icon hidden" onclick="toggleChatBox()">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <div id="chatBox" class="hidden">
+        <div id="chatHeader">
+            <span>Live Chat</span>
+            <button id="closeChat" onclick="toggleChatBox()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="chatMessages">
+            <div class="chat-message received">Hello, how can I help you?</div>
+        </div>
+        <div class="send">
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <button id="sendMessage" onclick="sendMessage()">Send</button>
+
+        </div>
+    </div>
+
+    <!-- Footer Section  -->
+    <footer>
+        <div class="frow">
+            <div class="fcol">
+                <img src="./assets/img/logo.png" class="logo">
+                <p>"Unlock your potential with Wisdom Academy - where knowledge meets inspiration."</p>
+            </div>
+            <div class="fcol">
+                <h3>Head-Office<div class="underline"><span></span></div>
+                </h3>
+                <p>152A , Galle Road</p>
+                <p>Colombo 3</p>
+                <p>Sri Lanka</p>
+                <p class="email-id"><i class="far fa-envelope"></i> wisdomacademy@gmail.com</p>
+                <h4><i class="fas fa-phone-alt"></i> +94 11 4512 120</h4>
+                <h4><i class="fas fa-phone-alt"></i> +94 11 4545 190</h4>
+            </div>
+            <div class="fcol">
+                <h3>Links<div class="underline"><span></span></h3>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./courses.html">Courses</a></li>
+                    <li><a href="./trainer.html">Trainers</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+
+                </ul>
+            </div>
+            <div class="fcol">
+                <h3>Newsletter<div class="underline"><span></span></h3>
+                <form>
+                    <i class="far fa-envelope"></i>
+                    <input type="email" placeholder="Enter your email ID" required>
+                    <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                </form>
+
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-whatsapp"></i>
+                    <i class="fab fa-pinterest"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Sachintha Fernando &copy; 2023 - All Rights Reserved</p>
+    </footer>
+
+    <script src="./main.js"></script>
+    <script src="./new1.js"></script>
+    <script src="./app.js"></script>
+
+</body>
+
+</html>

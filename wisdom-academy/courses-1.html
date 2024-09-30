@@ -1,0 +1,323 @@
+<!-- Sachintha Fernando 
+     BSCP|CS|62|113 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Wisdom Academy </title>
+    <link rel="icon" href="./assets/img/logo.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.fontawesome.com/6.0.0-beta3/css/all.min.css">
+
+    <!-- Include Vue.js from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="./css/courses-detail.css">
+
+</head>
+
+<body>
+    <header>
+        <div id="menu" class="fas fa-bars"></div>
+        <img src="./assets/img/logo.png">
+
+        <a href="./assets/img/logo.png" class="logo"></i> Wisdom Academy </a>
+
+        <nav class="navbar">
+            <div class="mobile-navbar" id="myTopnav">
+                <div class="menu-icon" id="menuIcon">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="./courses.html" class="dropbtn" class="active">Courses <i
+                                class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="./courses-1.html">Software Development</a>
+                            <a href="./courses-2.html">Business Analytics</a>
+                            <a href="./courses-3.html">Nursing</a>
+                        </div>
+                    </li>
+                    <li><a href="./trainer.html">Trainers</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <div class="buttons">
+                        <a href="./login.html" class="button">Sign In</a>
+                        <a href="./signup.html" class="button">Register</a>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Courses in Detail  -->
+    <section class="course-details">
+        <div class="course-image">
+            <img src="./assets/img/courses/course-1.jpg " alt="Course Image">
+        </div>
+        <div class="course-info">
+            <h2>Software Development</h2>
+
+            <div class="info-box">
+                <p><strong>Price:</strong> $80</p>
+
+            </div>
+            <div class="info-box">
+                <p><strong>Duration:</strong> 3 years</p>
+
+            </div>
+            <div class="info-box">
+                <p><strong>Trainer:</strong> Michael Turner</p>
+
+            </div>
+            <div class="info-box">
+                <p><strong>Schedule:</strong> 5:00 pm - 7:00 pm</p>
+
+            </div>
+
+            <a href="./signup.html" class="btn">Enroll Now</a>
+        </div>
+        </div>
+    </section>
+
+    <div class="content-container">
+        <div class="text-left">
+            <a href="javascript:void(0);" onclick="showSection(1)" class="section-link">Overview</a>
+            <a href="javascript:void(0);" onclick="showSection(2)" class="section-link">Course Modules</a>
+            <a href="javascript:void(0);" onclick="showSection(3)" class="section-link">Entry Requirements</a>
+            <a href="javascript:void(0);" onclick="showSection(4)" class="section-link">Fees & Scholarships</a>
+            <a href="javascript:void(0);" onclick="showSection(5)" class="section-link">Careers</a>
+        </div>
+
+        <div class="line-divider"></div>
+
+        <!-- Content on the right -->
+        <div class="content">
+            <div class="section">
+                <h1>Overview About The Course</h1>
+                <div class="content-section">
+                    <div class="paragraph-right">
+                        Development is a dynamic and essential field in the realm of technology.
+                        It involves the art and science of designing, coding, testing, and maintaining
+                        computer software and applications. Software developers, often referred to as coders
+                        or programmers, utilize their expertise in various programming languages and frameworks
+                        to craft functional, user-friendly, and innovative software solutions.
+
+                        The journey of software development typically begins with careful analysis and planning,
+                        where developers collaborate with stakeholders to understand user requirements and define
+                        the software's architecture. Once the blueprint is in place, developers dive into the
+                        coding phase, where lines of code come to life, shaping the software's functionality.
+                    </div>
+                    <div class="image-right">
+                        <img src="./assets/img/courses/overview.png" alt="Overview Image">
+                    </div>
+                </div>
+
+            </div>
+            <div class="section">
+                <h1>Course Content</h1>
+                <div class="content-section">
+                    <div class="paragraph-right">
+                        <ol>
+                            <li>Basic Programming Concepts
+                                <ul>
+                                    <li>Introduction to programming languages and code structure.</li>
+                                </ul>
+                            </li>
+                            <li>Web Development Essentials
+                                <ul>
+                                    <li>HTML, CSS, and JavaScript fundamentals for web development.</li>
+                                </ul>
+                            </li>
+                            <li>Introduction to Databases
+                                <ul>
+                                    <li>Basics of databases and SQL.</li>
+                                </ul>
+                            </li>
+                            <li>Object-Oriented Programming
+                                <ul>
+                                    <li>Understanding OOP principles.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="image-right">
+                        <img src="./assets/img/courses/module.png" alt="Overview Image">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section">
+                <h1>The Minimum Entry Requirements</h1>
+                <div class="content-section">
+                    <div class="paragraph-right">
+                        This introductory course in Software Development is designed to be accessible to individuals
+                        with a
+                        range of educational backgrounds. To enroll, all you need is a high school diploma or its
+                        equivalent. While no prior programming experience is necessary, a fundamental understanding of
+                        basic
+                        computer operations and familiarity with common software applications is beneficial. This course
+                        is
+                        an ideal starting point for those looking to explore the world of software development and gain
+                        foundational skills in programming. As the course progresses, you will gain confidence in your
+                        coding abilities and be prepared to explore further studies or pursue entry-level positions in
+                        the
+                        software development industry. It is open to anyone with a curiosity and passion for software
+                        and
+                        technology.
+
+                    </div>
+                    <div class="image-right">
+                        <img src="./assets/img/courses/entry.png" alt="Overview Image">
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="section">
+                <h1>Fees and Scholarships Schemes</h1>
+                <div class="content-section">
+                    <div class="paragraph-right">
+                        The Introduction to Software Development course offers an affordable entry point into the world
+                        of
+                        programming, with a tuition fee of $1,500 for the three-month program. This fee covers all
+                        course
+                        materials and access to valuable learning resources, ensuring a comprehensive learning
+                        experience.
+                        For those with financial constraints, limited scholarships are available, which can
+                        significantly
+                        reduce the tuition cost. Scholarships are awarded based on factors including academic merit, a
+                        strong commitment to technology, and demonstrated financial need. These scholarship
+                        opportunities
+                        aim to make the course accessible to a diverse range of students, enabling them to kickstart
+                        their
+                        journey in software development.
+                    </div>
+                    <div class="image-right">
+                        <img src="./assets/img/courses/fees.png" alt="Overview Image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h1>Career Pathways</h1>
+                <div class="content-section">
+                    <div class="paragraph-right">
+                        Upon successful completion of the Introduction to Software Development course, you'll be
+                        equipped
+                        with foundational programming skills that open the door to a range of entry-level positions in
+                        the
+                        technology industry. You can explore opportunities as a Junior Web Developer, where you'll work
+                        on
+                        building and maintaining websites, or take on the role of a Programming Assistant, assisting
+                        experienced developers with coding tasks. Additionally, you may consider positions as a Database
+                        Administrator Assistant, supporting database management, or even an IT Support Specialist,
+                        providing
+                        technical assistance to users.
+                    </div>
+                    <div class="image-right">
+                        <img src="./assets/img/courses/career.png" alt="Overview Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Button  -->
+    <button id="scrollUpButton" class="hidden" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+    <!-- Chat Window -->
+    <div id="chatIcon" class="chat-icon hidden" onclick="toggleChatBox()">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <div id="chatBox" class="hidden">
+        <div id="chatHeader">
+            <span>Live Chat</span>
+            <button id="closeChat" onclick="toggleChatBox()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="chatMessages">
+            <div class="chat-message received">Hello, how can I help you?</div>
+        </div>
+        <div class="send">
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <button id="sendMessage" onclick="sendMessage()">Send</button>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="frow">
+            <div class="fcol">
+                <img src="./assets/img/logo.png" class="logo">
+                <p>"Unlock your potential with Wisdom Academy - where knowledge meets inspiration."</p>
+            </div>
+            <div class="fcol">
+                <h3>Head-Office<div class="underline"><span></span></div>
+                </h3>
+                <p>152A , Galle Road</p>
+                <p>Colombo 3</p>
+                <p>Sri Lanka</p>
+                <p class="email-id"><i class="far fa-envelope"></i> wisdomacademy@gmail.com</p>
+                <h4><i class="fas fa-phone-alt"></i> +94 11 4512 120</h4>
+                <h4><i class="fas fa-phone-alt"></i> +94 11 4545 190</h4>
+            </div>
+            <div class="fcol">
+                <h3>Links<div class="underline"><span></span></h3>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./courses.html">Courses</a></li>
+                    <li><a href="./trainer.html">Trainers</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+
+                </ul>
+            </div>
+            <div class="fcol">
+                <h3>Newsletter<div class="underline"><span></span></h3>
+                <form>
+                    <i class="far fa-envelope"></i>
+                    <input type="email" placeholder="Enter your email ID" required>
+                    <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                </form>
+
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-whatsapp"></i>
+                    <i class="fab fa-pinterest"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Sachintha Fernando &copy; 2023 - All Rights Reserved</p>
+    </footer>
+
+
+    <script src="./main.js"></script>
+    <script src="./new1.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>

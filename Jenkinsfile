@@ -2,6 +2,20 @@ pipeline {
     agent any
 
     stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    // Ensure Jenkins pulls the code from the master branch
+                    checkout([
+                        $class: 'GitSCM', 
+                        branches: [[name: '*/master']],
+                        userRemoteConfigs: [[url: 'https://github.com/sachinthaaaf/FinalProject.git']]
+                    ])
+                }
+            }
+        }
+
+    stages {
         stage('Build') {
             steps {
                 script {

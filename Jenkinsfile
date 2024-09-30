@@ -46,15 +46,30 @@ pipeline {
         always {
             script {
                 echo "Checking if any alert conditions are met..."
+                
                 // Check application health status
                 def response = bat(script: 'curl -s http://localhost:3000/status', returnStdout: true).trim()
+                
                 if (response != 'Status: OK') {
                     echo 'ALERT: Application is not healthy!'
-                    // Here you could send an email or Slack notification if integrated
+                    // Send an email alert when the application is not health
+                    emailext (
+                        subject: "ALERT: Application Health Check Failed in ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                        body: """
+                        <p>The application health check has failed during the monitoring stage.</p>
+                        <p>Status returned: ${response}</p>
+                        <p>Job: ${env.JOB_NAME}</p>
+                        <p>Build Number: ${env.BUILD_NUMBER}</p>
+                        <p>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
+                        """,
+                        recipientProviders: [[$class: 'DevelopersRecipientProvider']],
+                        to: 'fernandosachintha08@gmail.com'
+                    )
                 } else {
                     echo 'Application is running fine.'
                 }
             }
+
         }
     }
 }

@@ -1,27 +1,12 @@
 pipeline {
     agent any
 
-    environment {
-        SONARQUBE_ENV = 'SonarQube' // Name given in Jenkins config
-    }
-
     stages {
         stage('Build') {
             steps {
                 script {
                     echo 'Building Docker Image...'
                     bat 'docker build -t my-app:latest .'
-                }
-            }
-        }
-        
-        stage('Deploy') {
-            steps {
-                script {
-                    echo 'Deploying Docker Container...'
-                    bat 'docker rm -f my-app-container || true'
-                    bat 'docker run -d -p 3000:3000 --name my-app-container my-app:latest'
-                    sleep 10
                 }
             }
         }
@@ -35,13 +20,14 @@ pipeline {
             }
         }
 
-        stage('Code Quality Analysis') {
+        stage('Deploy') {
             steps {
                 script {
-                    echo 'Running SonarQube analysis...'
-                    withSonarQubeEnv(SONARQUBE_ENV) {
-                        bat 'mvn sonar:sonar'
-                    }
+                    echo 'Deploying with Docker Compose...'
+                    
+                    // Start the application using Docker Compose
+                    bat 'docker-compose down' // Stop any running containers
+                    bat 'docker-compose up -d' // Start new containers
                 }
             }
         }
@@ -53,10 +39,10 @@ pipeline {
     //         archiveArtifacts artifacts: '**/target/surefire-reports/*.xml', allowEmptyArchive: true
     //     }
     //     success {
-    //         echo 'Build succeeded with all tests passed.'
+    //         echo 'Deployment succeeded with Docker Compose.'
     //     }
-    //     unstable {
-    //         echo 'Build is unstable due to test failures.'
+    //     failure {
+    //         echo 'Deployment failed.'
     //     }
     // }
 }

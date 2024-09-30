@@ -65,6 +65,18 @@ pipeline {
                     )
                 } else {
                     echo 'Application is not healthy.'
+                    emailext (
+                        subject: "ALERT: Application Health Check failed in ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                        body: """
+                        <p>The application health check has failed during the monitoring stage.</p>
+                        <p>Status returned: ${response}</p>
+                        <p>Job: ${env.JOB_NAME}</p>
+                        <p>Build Number: ${env.BUILD_NUMBER}</p>
+                        <p>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
+                        """,
+                        recipientProviders: [[$class: 'DevelopersRecipientProvider']],
+                        to: 'fernandosachintha08@gmail.com'
+                    )
                 }
             }
 

@@ -30,18 +30,6 @@ pipeline {
                 }
             }
         }
-
-         stage('Test Environment') {
-            steps {
-                script {
-                    echo 'Deploying with Docker Compose...'
-                    
-                    // Start the application using Docker Compose
-                    bat 'docker-compose down' // Stop any running containers
-                    bat 'docker-compose up -d' // Start new containers
-                }
-            }
-        }
     }
 
     // post {

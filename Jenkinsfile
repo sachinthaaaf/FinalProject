@@ -30,6 +30,16 @@ pipeline {
                 }
             }
         }
+        stage('Monitoring and Alerting') {
+            steps {
+                script {
+                    echo 'Setting up New Relic for monitoring...'
+                    // Deploy application with New Relic agent
+                    bat 'docker-compose down'
+                    bat 'docker-compose up -d'
+                }
+            }
+        }
     }
 
     // post {

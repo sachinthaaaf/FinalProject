@@ -14,6 +14,11 @@ const server = http.createServer((req, res) => {
     // Resolve the file path based on the request URL
     let filePath = path.join(rootDirectory, req.url === '/' ? 'index.html' : req.url);
 
+    // Handle the case where no file extension is provided
+    if (!path.extname(filePath)) {
+        filePath += '.html'; // Default to HTML file
+    }
+
     // Get the file extension for content-type mapping
     const extname = path.extname(filePath);
     let contentType = 'text/html'; // Default to HTML
@@ -35,11 +40,14 @@ const server = http.createServer((req, res) => {
         case '.jpg':
             contentType = 'image/jpg';
             break;
-        case '.ico':
-            contentType = 'image/x-icon';
+        case '.gif':
+            contentType = 'image/gif';
             break;
         case '.svg':
             contentType = 'image/svg+xml';
+            break;
+        case '.ico':
+            contentType = 'image/x-icon';
             break;
         default:
             contentType = 'text/html';
@@ -60,7 +68,7 @@ const server = http.createServer((req, res) => {
                 res.end('500 - Internal Server Error');
             }
         } else {
-            // Serve the requested file
+            // Serve the requested file with the appropriate content type
             res.writeHead(200, { 'Content-Type': contentType });
             res.end(content, 'utf-8');
         }

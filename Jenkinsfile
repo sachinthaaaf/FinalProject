@@ -30,11 +30,11 @@ pipeline {
                 }
             }
         }
+
         stage('Monitoring and Alerting') {
             steps {
                 script {
                     echo 'Setting up New Relic for monitoring...'
-                    // Deploy application with New Relic agent
                     bat 'docker-compose down'
                     bat 'docker-compose up -d'
                 }
@@ -42,16 +42,19 @@ pipeline {
         }
     }
 
-    // post {
-    //     always {
-    //         junit '**/target/surefire-reports/*.xml'
-    //         archiveArtifacts artifacts: '**/target/surefire-reports/*.xml', allowEmptyArchive: true
-    //     }
-    //     success {
-    //         echo 'Build succeeded with all tests passed.'
-    //     }
-    //     unstable {
-    //         echo 'Build is unstable due to test failures or code quality issues.'
-    //     }
-    // }
+    post {
+        always {
+            script {
+                echo "Checking if any alert conditions are met..."
+                // Check application health status
+                def response = bat(script: 'curl -s http://localhost:3000/status', returnStdout: true).trim()
+                if (response != 'Status: OK') {
+                    echo 'ALERT: Application is not healthy!'
+                    // Here you could send an email or Slack notification if integrated
+                } else {
+                    echo 'Application is running fine.'
+                }
+            }
+        }
+    }
 }

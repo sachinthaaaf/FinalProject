@@ -1,4 +1,3 @@
-require('newrelic');
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -6,31 +5,55 @@ const path = require('path');
 // Define the port your server will listen on
 const port = 3000;
 
+// Create an HTTP server
 const server = http.createServer((req, res) => {
-    if (req.url === '/') {
-        // Serve the index.html file for the root URL
-        const filePath = path.join(__dirname, '/wisdom-academy/index.html');
-        
-        fs.readFile(filePath, (err, content) => {
-            if (err) {
-                // If there's an error, return a 500 Internal Server Error
-                res.writeHead(500, { 'Content-Type': 'text/plain' });
-                res.end('500 - Internal Server Error');
-            } else {
-                // If successful, serve the index.html file
-                res.writeHead(200, { 'Content-Type': 'text/html' });
-                res.end(content, 'utf-8');
-            }
-        });
-    } else if (req.url === '/status') {
-        // Serve status response
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.end('Status: OK');
-    } else {
-        // For any other URL, return a 404 Not Found
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        res.end('404 Not Found');
+    let filePath = path.join(__dirname, 'wisdom-academy', req.url === '/' ? 'index.html' : req.url);
+    let extname = path.extname(filePath);
+    let contentType = 'text/html';
+
+    // Set content type based on file extension
+    switch (extname) {
+        case '.js':
+            contentType = 'application/javascript';
+            break;
+        case '.css':
+            contentType = 'text/css';
+            break;
+        case '.json':
+            contentType = 'application/json';
+            break;
+        case '.png':
+            contentType = 'image/png';
+            break;
+        case '.jpg':
+            contentType = 'image/jpg';
+            break;
+        case '.svg':
+            contentType = 'image/svg+xml';
+            break;
+        case '.ico':
+            contentType = 'image/x-icon';
+            break;
     }
+
+    // Read and serve the file
+    fs.readFile(filePath, (err, content) => {
+        if (err) {
+            if (err.code === 'ENOENT') {
+                // If file not found, return 404
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                res.end('<h1>404 - Not Found</h1>');
+            } else {
+                // Some server error
+                res.writeHead(500);
+                res.end(`Server Error: ${err.code}`);
+            }
+        } else {
+            // Serve the file with the appropriate content type
+            res.writeHead(200, { 'Content-Type': contentType });
+            res.end(content, 'utf-8');
+        }
+    });
 });
 
 // Start the server and listen on the defined port

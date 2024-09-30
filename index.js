@@ -1,3 +1,4 @@
+require('newrelic');
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -5,16 +6,22 @@ const path = require('path');
 // Define the port your server will listen on
 const port = 3000;
 
+// Define the root directory for the 'wisdom-academy' web application
+const rootDirectory = path.join(__dirname, 'wisdom-academy');
+
 // Create an HTTP server
 const server = http.createServer((req, res) => {
-    let filePath = path.join(__dirname, 'wisdom-academy', req.url === '/' ? 'index.html' : req.url);
-    let extname = path.extname(filePath);
-    let contentType = 'text/html';
+    // Resolve the file path based on the request URL
+    let filePath = path.join(rootDirectory, req.url === '/' ? 'index.html' : req.url);
 
-    // Set content type based on file extension
+    // Get the file extension for content-type mapping
+    const extname = path.extname(filePath);
+    let contentType = 'text/html'; // Default to HTML
+
+    // Set the content type based on the file extension
     switch (extname) {
         case '.js':
-            contentType = 'application/javascript';
+            contentType = 'text/javascript';
             break;
         case '.css':
             contentType = 'text/css';
@@ -28,28 +35,32 @@ const server = http.createServer((req, res) => {
         case '.jpg':
             contentType = 'image/jpg';
             break;
-        case '.svg':
-            contentType = 'image/svg+xml';
-            break;
         case '.ico':
             contentType = 'image/x-icon';
             break;
+        case '.svg':
+            contentType = 'image/svg+xml';
+            break;
+        default:
+            contentType = 'text/html';
+            break;
     }
 
-    // Read and serve the file
+    // Read the requested file from the file system
     fs.readFile(filePath, (err, content) => {
         if (err) {
+            // Handle errors (like file not found)
             if (err.code === 'ENOENT') {
-                // If file not found, return 404
-                res.writeHead(404, { 'Content-Type': 'text/html' });
-                res.end('<h1>404 - Not Found</h1>');
+                // If file not found, return a 404
+                res.writeHead(404, { 'Content-Type': 'text/plain' });
+                res.end('404 - Not Found');
             } else {
-                // Some server error
-                res.writeHead(500);
-                res.end(`Server Error: ${err.code}`);
+                // Return a 500 Internal Server Error for other errors
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('500 - Internal Server Error');
             }
         } else {
-            // Serve the file with the appropriate content type
+            // Serve the requested file
             res.writeHead(200, { 'Content-Type': contentType });
             res.end(content, 'utf-8');
         }
@@ -58,5 +69,5 @@ const server = http.createServer((req, res) => {
 
 // Start the server and listen on the defined port
 server.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
+    console.log(`Server running at http://localhost:${port}/`);
 });

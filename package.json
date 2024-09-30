@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "1.0.0",
-  "description": "My web app with monitoring",
+  "description": "My web app",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -9,7 +9,5 @@
   "dependencies": {
     "express": "^4.17.1",
     "newrelic": "^8.5.0"
-  },
-  "author": "SACHINTHA",
-  "license": "ISC"
+  }
 }
